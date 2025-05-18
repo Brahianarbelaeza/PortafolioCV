@@ -58,4 +58,12 @@
     color: var(--btn-hover-text);
   }
   
-  
+.home{
+  margin-top: 60px;
+  background-image: url('../../../assets/home-img.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #1A1A1A;
+
+} 
