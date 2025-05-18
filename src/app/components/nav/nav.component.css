@@ -1,24 +1,26 @@
-.navbar {
-    background-color: #121212;
+.navbar-dark {
+    background-color: #121212 !important;
   }
   
-  .navbar-brand {
-    font-family: 'Georgia', serif;
-    font-weight: bold;
+  .navbar-light {
+    background-color: #e6edf7 !important;
+  }
+  
+  .navbar-dark .nav-link {
+    color: #d3d3d3;
+  }
+  .navbar-dark .nav-link:hover {
     color: white;
   }
-  
-  .navbar-nav .nav-link {
-    color: #d3d3d3;
-    transition: color 0.3s;
-  }
-  
-  .navbar-nav .nav-link.active {
+  .navbar-dark .nav-link.active {
     color: #0d99ff;
   }
   
-  .navbar-nav .nav-link:hover {
-    color: white;
+  .navbar-light .nav-link {
+    color: #333;
+  }
+  .navbar-light .nav-link.active {
+    color: #409fff;
   }
   
   .btn-contact {
@@ -29,63 +31,13 @@
     transition: all 0.3s ease-in-out;
   }
   
-  .btn-contact:hover {
-    background-color: #0d99ff;
-    color: white;
-  }
- /* === MODO CLARO COMO LA IMAGEN === */
-body.light-mode {
-    background-color: #e6edf7; /* azul muy claro */
-    color: #1c1c1c;
-  }
-  
-  /* NAVBAR */
-  body.light-mode .navbar {
-    background-color: #e6edf7 !important;
-    box-shadow: none;
-  }
-  
-  body.light-mode .navbar .nav-link {
-    color: #333 !important;
-    font-weight: 500;
-  }
-  
-  body.light-mode .navbar .nav-link.active {
-    color: #409fff !important;
-  }
-  
-  body.light-mode .navbar .btn-contact {
+  .navbar-light .btn-contact {
+    border-color: #333;
     color: #333;
-    border: 1px solid #333;
-    background-color: transparent;
-    padding: 6px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
   }
-  
-  body.light-mode .navbar .btn-contact:hover {
+  .navbar-light .btn-contact:hover {
     background-color: #333;
     color: white;
   }
   
-  /* ÍCONO DE MODO CLARO/OSCURO */
-  body.light-mode .btn-mode i {
-    color: #333 !important;
-  }
-  
-  /* BOTÓN PRINCIPAL EN SECCIÓN HOME */
-  body.light-mode .home-contact-button {
-    border: 1px solid #333;
-    color: #333;
-    background-color: transparent;
-    padding: 10px 24px;
-    border-radius: 20px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-  }
-  
-  body.light-mode .home-contact-button:hover {
-    background-color: #333;
-    color: white;
-  }
   
