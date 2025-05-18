@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { environment } from '../../env/enviroment';
 
 @Component({
   selector: 'app-nav',
@@ -8,17 +9,40 @@ import { Component } from '@angular/core';
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
-export class NavComponent {
-  isDarkMode: boolean = true;
+export class NavComponent implements OnInit {
+  isDarkMode: boolean = environment.NAV_COLOR_MODE === 'dark';
+
+  themeStyles = this.computeStyles();
+
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
-    document.body.classList.toggle('light-mode', !this.isDarkMode);
+    environment.NAV_COLOR_MODE = this.isDarkMode ? 'dark' : 'light';
     localStorage.setItem('darkMode', this.isDarkMode.toString());
+    document.body.classList.toggle('light-mode', !this.isDarkMode);
+    this.themeStyles = this.computeStyles(); // Actualiza estilos
   }
-  
+
   ngOnInit(): void {
     const savedMode = localStorage.getItem('darkMode');
     this.isDarkMode = savedMode === null ? true : savedMode === 'true';
     document.body.classList.toggle('light-mode', !this.isDarkMode);
+    this.themeStyles = this.computeStyles();
+  }
+
+  private computeStyles() {
+    return {
+      navBackground: this.isDarkMode ? environment.NAV_DARK_COLOR : environment.NAV_LIGHT_COLOR,
+      linkColor: this.isDarkMode ? environment.NAV_DARK_TEXT_COLOR : environment.NAV_LIGHT_TEXT_COLOR,
+      activeLinkColor: this.isDarkMode ? environment.NAV_ACTIVE_LINK_DARK : environment.NAV_ACTIVE_LINK_LIGHT,
+      contactButton: {
+        borderColor: this.isDarkMode ? environment.NAV_CONTACT_BORDER_DARK : environment.NAV_CONTACT_BORDER_LIGHT,
+        color: this.isDarkMode ? environment.NAV_CONTACT_BORDER_DARK : environment.NAV_CONTACT_BORDER_LIGHT,
+        fontFamily: environment.NAV_FONT_FAMILY,
+        fontSize: environment.NAV_FONT_SIZE
+      },
+      iconColor: this.isDarkMode ? environment.NAV_DARK_TEXT_COLOR : environment.NAV_LIGHT_TEXT_COLOR,
+      nameFontFamily: environment.NAV_FONT_FAMILY_NAME,
+      nameFontSize: environment.NAV_FONT_SIZE,
+    };
   }
 }

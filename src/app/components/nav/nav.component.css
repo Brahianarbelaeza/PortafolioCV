@@ -1,43 +1,15 @@
-.navbar-dark {
-    background-color: #121212 !important;
-  }
-  
-  .navbar-light {
-    background-color: #e6edf7 !important;
-  }
-  
-  .navbar-dark .nav-link {
-    color: #d3d3d3;
-  }
-  .navbar-dark .nav-link:hover {
-    color: white;
-  }
-  .navbar-dark .nav-link.active {
-    color: #0d99ff;
-  }
-  
-  .navbar-light .nav-link {
-    color: #333;
-  }
-  .navbar-light .nav-link.active {
-    color: #409fff;
-  }
-  
-  .btn-contact {
-    border: 1px solid #0d99ff;
-    color: #0d99ff;
-    border-radius: 0.5rem;
-    padding: 5px 15px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .navbar-light .btn-contact {
-    border-color: #333;
-    color: #333;
-  }
-  .navbar-light .btn-contact:hover {
-    background-color: #333;
-    color: white;
-  }
-  
-  
+/* nav.component.css */
+.navbar .nav-link:hover {
+  text-decoration: underline;
+}
+
+.btn-contact {
+  border-radius: 0.5rem;
+  padding: 5px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-contact:hover {
+  background-color: currentColor;
+  color: white !important;
+}
