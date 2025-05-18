@@ -9,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class AboutMeComponent {
 
+  themeStyles = this.computeStyles();
+
+
+  private computeStyles() {
+    return {
+      backgroundColor: '#E0E8F6',
+      textColor: '#333',
+      fontFamily: 'Montserrat, sans-serif',
+      fontSize: '18px'
+    };
+  }
+
+  
 }

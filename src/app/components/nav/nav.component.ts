@@ -10,13 +10,13 @@ import { environment } from '../../env/enviroment';
   styleUrl: './nav.component.css'
 })
 export class NavComponent implements OnInit {
-  isDarkMode: boolean = environment.NAV_COLOR_MODE === 'dark';
+  isDarkMode: boolean = environment.COLOR_MODE === 'dark';
 
   themeStyles = this.computeStyles();
 
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
-    environment.NAV_COLOR_MODE = this.isDarkMode ? 'dark' : 'light';
+    environment.COLOR_MODE = this.isDarkMode ? 'dark' : 'light';
     localStorage.setItem('darkMode', this.isDarkMode.toString());
     document.body.classList.toggle('light-mode', !this.isDarkMode);
     this.themeStyles = this.computeStyles(); // Actualiza estilos
@@ -31,7 +31,7 @@ export class NavComponent implements OnInit {
 
   private computeStyles() {
     return {
-      navBackground: this.isDarkMode ? environment.NAV_DARK_COLOR : environment.NAV_LIGHT_COLOR,
+      navBackground: this.isDarkMode ? environment.BG_DARK_COLOR : environment.BG_LIGHT_COLOR,
       linkColor: this.isDarkMode ? environment.NAV_DARK_TEXT_COLOR : environment.NAV_LIGHT_TEXT_COLOR,
       activeLinkColor: this.isDarkMode ? environment.NAV_ACTIVE_LINK_DARK : environment.NAV_ACTIVE_LINK_LIGHT,
       contactButton: {
@@ -41,8 +41,6 @@ export class NavComponent implements OnInit {
         fontSize: environment.NAV_FONT_SIZE
       },
       iconColor: this.isDarkMode ? environment.NAV_DARK_TEXT_COLOR : environment.NAV_LIGHT_TEXT_COLOR,
-      nameFontFamily: environment.NAV_FONT_FAMILY_NAME,
-      nameFontSize: environment.NAV_FONT_SIZE,
     };
   }
 }

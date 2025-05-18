@@ -13,3 +13,8 @@
   background-color: currentColor;
   color: white !important;
 }
+
+.name-nav{
+  font-size: 32px;
+  font-family: 'Oleo Script';
+}
