@@ -1,13 +1,13 @@
-<div class="container-fluid px-0 component ">
-  <div class="row justify-content-center block">
-    <div class="col-12 text-center">
+<div  [ngClass]="isDark ? 'background-dark':'background-light'" class="component">
+    <div class="text-center">
       <div class="avatar-circle mx-auto">
         <img src="../../../assets/avatar.png" alt="Avatar" class="avatar-img" />
       </div>
-
-      <h1 class="name-title text-white"><strong>Brahian Andrés</strong></h1>
-      <h2 class="role-title text-primary">Software Engineer 👨‍💻</h2>
-      <p class="description text-white mx-auto">
+      <h1>
+        <strong>Brahian Andrés</strong>
+      </h1>
+      <h2 class="role-title text-primary fs-4">Software Engineer 👨‍💻</h2>
+      <p class="description mx-auto">
         As a passionate software engineer...
       </p>
       <a class="btn contact-button mt-4" routerLink="/contact">Contact Me</a>

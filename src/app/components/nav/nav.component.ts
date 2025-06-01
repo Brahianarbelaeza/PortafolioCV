@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../env/enviroment';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,6 +11,8 @@ import { environment } from '../../env/enviroment';
   styleUrl: './nav.component.css'
 })
 export class NavComponent implements OnInit {
+
+  constructor(private themeService: ThemeService) {}
   isDarkMode: boolean = environment.COLOR_MODE === 'dark';
 
   themeStyles = this.computeStyles();
@@ -20,6 +23,8 @@ export class NavComponent implements OnInit {
     localStorage.setItem('darkMode', this.isDarkMode.toString());
     document.body.classList.toggle('light-mode', !this.isDarkMode);
     this.themeStyles = this.computeStyles(); // Actualiza estilos
+
+    this.themeService.toggleTheme();
   }
 
   ngOnInit(): void {

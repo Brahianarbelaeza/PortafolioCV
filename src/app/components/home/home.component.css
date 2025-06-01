@@ -1,13 +1,4 @@
 
-.block {
-  display: block;
-  background-color: #1A1A1A;
-  background-image: url('../../../assets/home-img.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .avatar-circle {
   width: 160px;
   height: 160px;
@@ -27,30 +18,46 @@
   object-fit: cover;
 }
 
-.role-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 20px;
+.component{
+  min-width: 100vw;
+  margin-left: -12px;
+  padding-top: 60px;
 }
 
-.description {
-  font-size: 1rem;
-  max-width: 600px;
-  margin: 0 auto;
+.background-dark{
+  background-color: #1A1A1A;
+  color: #ffffff;
 }
 
-.contact-button {
-  padding: 10px 28px;
-  border: 1px solid var(--btn-border, #fff);
-  color: var(--btn-color, #fff);
-  background-color: transparent;
-  border-radius: 20px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  text-decoration: none;
+.background-light{
+  background-color: #E0E8F6;
+  color: #000000;
 }
 
-.contact-button:hover {
-  background-color: var(--btn-hover-bg, #fff);
-  color: var(--btn-hover-text, #000);
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.col-12 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.boton-dark {
+  background-color: #1976d2;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boton-light {
+  background-color: #42a5f5;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
