@@ -1,1 +1,27 @@
-<p>skills works!</p>
+<div class="container text-center py-5 text-white">
+    <h2 class="fw-bold display-5">What I do</h2>
+    <p class="text-primary mb-5">My Services</p>
+  
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let service of services">
+        <div class="card h-100 bg-dark border-0 shadow-sm p-3 rounded-4">
+          <div class="d-flex align-items-start gap-3">
+            <div class="bg-secondary-subtle p-2 rounded">
+              <span class="fs-4">{{ service.icon }}</span>
+            </div>
+            <div>
+              <h5 class="card-title text-white mb-2">{{ service.title }}</h5>
+              <p class="card-text text-secondary small">{{ service.description }}</p>
+            </div>
+          </div>
+  
+          <img *ngIf="service.image"
+               [src]="service.image"
+               alt="Service image"
+               class="img-fluid rounded mt-3"
+               style="max-height: 140px; object-fit: cover;" />
+        </div>
+      </div>
+    </div>
+  </div>
+  
