@@ -24,7 +24,6 @@ export class HomeComponent {
     this.themeService.isDarkMode$.subscribe(mode => this.isDark = mode);
     this.dataService.getData().subscribe(data => {
       this.data = data;
-      console.log('Data loaded:', this.data);
     }
     );
   }

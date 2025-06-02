@@ -18,3 +18,31 @@
   font-size: 32px;
   font-family: 'Oleo Script';
 }
+
+
+.navbar-dark {
+  background-color: #1A1A1A;
+  color: #ffffff;
+}
+.navbar-light {
+  background-color: #E0E8F6;
+  color: #000000;
+}
+
+.nav-link-dark {
+  color: #ffffff;
+}
+.nav-link-light {
+  color: #000000;
+}
+
+.nav-link-dark:hover {
+  color: #42a5f5;
+}
+.nav-link-light:hover {
+  color: #0d90fc;
+}
+
+.nav-link{
+  cursor: pointer;
+}

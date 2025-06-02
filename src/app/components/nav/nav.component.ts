@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../env/enviroment';
 import { ThemeService } from '../../services/theme.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-nav',
@@ -10,42 +11,37 @@ import { ThemeService } from '../../services/theme.service';
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
+
+  isDarkMode = true;
+  themeStyles: any = {};
+  private subscription: Subscription = new Subscription();
 
   constructor(private themeService: ThemeService) {}
-  isDarkMode: boolean = environment.COLOR_MODE === 'dark';
-
-  themeStyles = this.computeStyles();
-
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-    environment.COLOR_MODE = this.isDarkMode ? 'dark' : 'light';
-    localStorage.setItem('darkMode', this.isDarkMode.toString());
-    document.body.classList.toggle('light-mode', !this.isDarkMode);
-    this.themeStyles = this.computeStyles(); // Actualiza estilos
-
-    this.themeService.toggleTheme();
-  }
 
   ngOnInit(): void {
-    const savedMode = localStorage.getItem('darkMode');
-    this.isDarkMode = savedMode === null ? true : savedMode === 'true';
-    document.body.classList.toggle('light-mode', !this.isDarkMode);
-    this.themeStyles = this.computeStyles();
+    this.themeService.setDarkMode(true); // Opcional, fuerza modo claro al iniciar
+
+    this.subscription = this.themeService.isDarkMode$.subscribe((isDark) => {
+      this.isDarkMode = isDark;
+      this.themeStyles = this.computeStyles();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 
   private computeStyles() {
     return {
-      navBackground: this.isDarkMode ? environment.BG_DARK_COLOR : environment.BG_LIGHT_COLOR,
       linkColor: this.isDarkMode ? environment.NAV_DARK_TEXT_COLOR : environment.NAV_LIGHT_TEXT_COLOR,
       activeLinkColor: this.isDarkMode ? environment.NAV_ACTIVE_LINK_DARK : environment.NAV_ACTIVE_LINK_LIGHT,
-      contactButton: {
-        borderColor: this.isDarkMode ? environment.NAV_CONTACT_BORDER_DARK : environment.NAV_CONTACT_BORDER_LIGHT,
-        color: this.isDarkMode ? environment.NAV_CONTACT_BORDER_DARK : environment.NAV_CONTACT_BORDER_LIGHT,
-        fontFamily: environment.NAV_FONT_FAMILY,
-        fontSize: environment.NAV_FONT_SIZE
-      },
       iconColor: this.isDarkMode ? environment.NAV_DARK_TEXT_COLOR : environment.NAV_LIGHT_TEXT_COLOR,
     };
   }
+
 }
