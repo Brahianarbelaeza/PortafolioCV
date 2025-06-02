@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { environment } from '../../env/enviroment';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-about-me',
@@ -11,21 +12,13 @@ import { CommonModule } from '@angular/common';
 })
 export class AboutMeComponent {
 
-  isDarkMode = environment.COLOR_MODE === 'dark';
-  themeStyles = this.computeStyles();
+  isDark = false;
+
+  constructor(private themeService: ThemeService) {}
 
   ngOnInit(): void {
-    const saved = localStorage.getItem('darkMode');
-    this.isDarkMode = saved === null ? this.isDarkMode : saved === 'true';
-    document.body.classList.toggle('light-mode', !this.isDarkMode);
-    this.themeStyles = this.computeStyles();
+    this.themeService.isDarkMode$.subscribe(mode => this.isDark = mode);
   }
 
-  private computeStyles() {
-    return {
-      bgColor: this.isDarkMode ? environment.BG_DARK_COLOR : environment.BG_LIGHT_COLOR,
-      textColor: this.isDarkMode ? environment.NAV_DARK_TEXT_COLOR : environment.NAV_LIGHT_TEXT_COLOR
-    };
-  }
   
 }

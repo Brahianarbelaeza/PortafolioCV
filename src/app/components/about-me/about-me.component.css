@@ -1,3 +1,19 @@
 .component{
     padding-top: 80px;
 }
+
+
+
+.component-dark {
+  background-color: #1A1A1A;
+  color: #ffffff;
+}
+
+.component-light {
+  background-color: #E0E8F6;
+  color: #000000;
+}
+
+.text{
+    margin: 60px;
+}

@@ -1,20 +1,17 @@
-<div
-  class="row component"
-  [ngStyle]="{ 'background-color': themeStyles.bgColor, color: themeStyles.textColor }"
->
+<div class="row component" [ngClass]=" isDark ? 'component-dark' : 'component-light' " >
   <div class="row">
     <div class="row">
-      <h3 class="text-center">About me</h3>
+      <h3 class="text-center text-primary">About me</h3>
     </div>
     <div class="row">
       <p class="text-center">Get to know me</p>
     </div>
   </div>
   <div class="row">
-    <div class="m-5">
-        <p class="text-center paragraph mb-4 justify-content-center align-items-center wrap-text">
+    <div>
+        <p class="text-center justify-content-center wrap-text text">
             Hi there! I'm [Your Name], a data scientist specializing in data analytics, predictive modeling, natural language processing, machine learning, and AI chatbots.
-            With a passion for unraveling insights from complex datasets, <br>
+            With a passion for unraveling insights from complex datasets, 
             I'm dedicated to helping businesses make informed decisions and stay ahead in today's data-driven world.
             I bring a blend of technical expertise, hands-on experience, and a commitment to clear communication to every project. Whether it's uncovering hidden patterns, p
             redicting future trends, or automating processes with AI, I'm here to help you harness the full potential of your data.
