@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../../services/data.service';
+import { Data } from '../../model/data';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +14,19 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent {
 
   isDark = false;
-  
-  constructor(private themeService: ThemeService) {}
+  data!: Data;
 
-    ngOnInit() {
+  constructor(private themeService: ThemeService, private dataService: DataService) {
+    
+  }
+
+  ngOnInit() {
     this.themeService.isDarkMode$.subscribe(mode => this.isDark = mode);
+    this.dataService.getData().subscribe(data => {
+      this.data = data;
+      console.log('Data loaded:', this.data);
     }
+    );
+  }
 
 }

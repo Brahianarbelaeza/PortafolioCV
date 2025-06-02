@@ -1,0 +1,50 @@
+.component {
+    min-width: 100vw;
+    margin-left: -12px;
+    padding-top: 60px;
+}
+
+
+.background-dark{
+  background-color: #1A1A1A;
+  color: #ffffff;
+}
+
+.background-light{
+  background-color: #E0E8F6;
+  color: #000000;
+}
+
+.pill-light {
+  background-color: transparent;
+  color: #0d90fc;
+  border: 2px solid #0d90fc;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+.pill-dark {
+  background-color: #42a5f5;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.pill-dark:hover {
+  background-color: #2588e4;
+  color: #ffffff;
+}
+
+.pill-light:hover {
+  background-color: #0d90fc;
+  color: #ffffff;
+}
+
+.tarjeta{
+    background-color: transparent;
+    border: 2px solid #0d90fc;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+}

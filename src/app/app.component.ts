@@ -11,9 +11,8 @@ import { SkillsComponent } from './components/skills/skills.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,NavComponent, AboutMeComponent, ContactComponent, FooterComponent,
-    HomeComponent, NavComponent, ProjectsComponent, SkillsComponent
-   ],
+  imports: [NavComponent, AboutMeComponent, ContactComponent, FooterComponent,
+    HomeComponent, NavComponent, ProjectsComponent, SkillsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

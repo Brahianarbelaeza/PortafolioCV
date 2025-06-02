@@ -1,9 +1,42 @@
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.component{
+  min-width: 100vw;
+  margin-left: -12px;
+  padding: 60px 80px;
+}
+
+.component-dark {
+  background-color: #1A1A1A;
+  color: #ffffff;
+}
+.component-light {
+  background-color: #E0E8F6;
+  color: #000000;
+}
+
+.background-light{
+  background-color: #0d90fc5f;
+  color: #000000;
+}
+
+
+@media screen and (max-width: 768px) {
+  .component {
+    padding: 20px;
   }
   
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 480px) {
+  .component {
+    padding: 10px;
   }
-  
+}

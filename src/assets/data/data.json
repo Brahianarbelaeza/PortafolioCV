@@ -1,0 +1,28 @@
+{
+    "nombre": "Brahian Andrés Arbelaez",
+    "rol": "Desarrollador de web",
+    "descripcion": "As a passionate software engineer...",
+    "biografia": "Soy un ingeniero de software apasionado por la creación de soluciones innovadoras y eficientes. Con experiencia en desarrollo web y móvil, disfruto enfrentar desafíos técnicos y aprender nuevas tecnologías. Mi objetivo es contribuir al desarrollo de software que mejore la vida de las personas.",
+    "habilidades": [
+        {
+            "nombre": "JavaScript",
+            "img": " imagen.1",
+            "descripcion": "En JavaScript, tengo un nivel avanzado. He trabajado en múltiples proyectos utilizando este lenguaje, incluyendo aplicaciones web y móviles. Me siento cómodo con frameworks como React y Node.js."
+        },
+        {
+            "nombre": "Python",
+            "img": " imagen.2",
+            "descripcion": "En Python, tengo un nivel intermedio. He utilizado Python para el desarrollo de scripts y aplicaciones de análisis de datos. Estoy familiarizado con bibliotecas como Pandas y NumPy."
+        },
+        {
+            "nombre": "Java",
+            "img": " imagen.3",
+            "descripcion": "En Java, tengo un nivel básico. He trabajado en algunos proyectos académicos y personales, pero aún estoy aprendiendo más sobre este lenguaje."
+        },
+        {
+            "nombre": "C++",
+            "img": " imagen.4",
+            "descripcion": "En C++, tengo un nivel básico. He realizado algunos proyectos pequeños y estoy en proceso de mejorar mis habilidades en este lenguaje."
+        }
+    ]
+}
