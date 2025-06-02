@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { environment } from '../../env/enviroment';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../services/theme.service';
 import { DataService } from '../../services/data.service';
